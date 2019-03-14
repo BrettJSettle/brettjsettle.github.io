@@ -1,0 +1,25 @@
+{
+    "remotePath": "/var/www/html",
+    "host": "http://nbgwas.ucsd.edu",
+    "username": "bsettle",
+    "port": 8080,
+    "secure": false,
+    "protocol": "ftp",
+    "uploadOnSave": false,
+    "passive": false,
+    "debug": false,
+    "privateKeyPath": "/Users/bsettle/.ssh/nbgwas_bsettle",
+    "passphrase": null,
+    "agent": null,
+    "allow": [],
+    "ignore": [
+        "\\.vscode",
+        "\\.git",
+        "\\.DS_Store"
+    ],
+    "generatedFiles": {
+        "uploadOnSave": false,
+        "extensionsToInclude": [],
+        "path": ""
+    }
+}
