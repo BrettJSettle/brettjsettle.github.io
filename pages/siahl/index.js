@@ -55,7 +55,7 @@ export default class App extends React.Component {
                 <TableHead>
                     <TableRow>
                         <TableCell>{division} Schedules</TableCell>
-                        <TableCell align="right">Calendars</TableCell>
+                        <TableCell>Calendars</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -67,7 +67,7 @@ export default class App extends React.Component {
                             <TableCell component="th" scope="row">
                                 <Link variant="body1" href={this.buildScheduleUrl(id)}>{team}</Link>
                             </TableCell>
-                            <TableCell align="right">
+                            <TableCell>
                                 <Stack spacing={2} direction="row">
                                     <Link variant="contained" href={this.buildCalUrl(id)}>Google</Link>
                                     <Link variant="contained" href={this.buildWebCalUrl(id)}>Apple</Link>
