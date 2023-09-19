@@ -19,7 +19,7 @@ export default function Home() {
         </p>
 
         <div className={styles.grid}>
-          <a href="/posts/siahl" className={styles.card}>
+          <a href="/siahl" className={styles.card}>
             <h3>SIAHL Calendars</h3>
             <p>Links for adding team calendars to your Google Calendar</p>
           </a>
