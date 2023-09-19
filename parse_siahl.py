@@ -43,33 +43,10 @@ class SIAHLParser(HTMLParser):
             self.divisions[self.division][self.team] = cal
             self.team_link = None
 
-# class WebCalParser(HTMLParser):
-#     link_attrs = {}
-#     cal_url = ''
-#     def handle_starttag(self, tag: str, attrs) -> None:
-#         if tag == 'a':
-#             self.link_attrs = dict(attrs)
-
-#     def handle_endtag(self, tag: str) -> None:
-#         self.link_attrs = {}
-
-#     def handle_data(self, data: str) -> None:
-#         if not self.link_attrs:
-#             return
-#         elif data.strip() == 'WebCal':
-#             self.cal_url = self.link_attrs['href']
-
 
 def get_webcal(url):
     return int(re.search(r'team=(\d+)', url)[1])
 
-    # url = MAIN_URL + url
-    # text = requests.get(url).text
-    # cal_parser = WebCalParser()
-    # cal_parser.feed(text)
-    # return cal_parser.cal_url
-
 parser = SIAHLParser()
 parser.feed(response.text)
-print(parser.divisions)
-json.dump(parser.divisions, open('siahl_calendars2.json', 'w'))
+json.dump(parser.divisions, open('app/public/siahl_calendars.json', 'w'))
