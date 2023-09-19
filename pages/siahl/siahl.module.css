@@ -1,4 +1,6 @@
-
+.box {
+    min-width: 300px;
+}
 .styled_table {
     border-collapse: collapse;
     font-size: 0.9em;

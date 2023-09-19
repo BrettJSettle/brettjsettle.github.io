@@ -47,7 +47,7 @@ export default class App extends React.Component {
     renderDivision = (division, teams) => {
 
         return (
-            <Table sx={{ minWidth: 600 }} size="small" aria-label="simple table" className={styles.styled_table}>
+            <Table size="small" aria-label="simple table" className={styles.styled_table}>
                 <TableHead>
                     <TableRow>
                         <TableCell>{division} Schedules</TableCell>
@@ -111,7 +111,7 @@ export default class App extends React.Component {
             season
         } = this.state;
         return (
-            <Box sx={{ flexGrow: 1 }}>
+            <Box sx={{ flexGrow: 1 }} className={styles.box}>
                 <AppBar position="static">
                     <Toolbar>
                         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
