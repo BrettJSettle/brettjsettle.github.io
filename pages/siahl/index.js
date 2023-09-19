@@ -1,7 +1,6 @@
 import React from "react";
 import styles from './siahl.module.css'
 
-import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
@@ -16,6 +15,7 @@ import TableCell from '@mui/material/TableCell';
 import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import Link from '@mui/material/Link';
+import Stack from '@mui/material/Stack';
 
 let SUBSCRIBE_URL = "https://calendar.google.com/calendar/render?cid=";
 let SCHEDULE_URL = "https://stats.sharksice.timetoscore.com/display-schedule?league=1&stat_class=1";
@@ -40,6 +40,10 @@ export default class App extends React.Component {
         return `${SUBSCRIBE_URL}webcal://stats.sharksice.timetoscore.com/team-cal.php?team=${team_id}%26season=${this.seasonId()}%26tlev=0%26tseq=0%26format=iCal`;
     }
 
+    buildWebCalUrl = (team_id) => {
+        return `webcal://stats.sharksice.timetoscore.com/team-cal.php?team=${team_id}&season=${this.seasonId()}&tlev=0&tseq=0&format=iCal`;
+    }
+
     buildScheduleUrl = (team_id) => {
         return `${SCHEDULE_URL}&team=${team_id}&season=${this.seasonId()}`;
     }
@@ -51,7 +55,7 @@ export default class App extends React.Component {
                 <TableHead>
                     <TableRow>
                         <TableCell>{division} Schedules</TableCell>
-                        <TableCell align="right">Calendar</TableCell>
+                        <TableCell align="right">Calendars</TableCell>
                     </TableRow>
                 </TableHead>
                 <TableBody>
@@ -64,7 +68,10 @@ export default class App extends React.Component {
                                 <Link variant="body1" href={this.buildScheduleUrl(id)}>{team}</Link>
                             </TableCell>
                             <TableCell align="right">
-                                <Button variant="contained" onClick={() => window.open(this.buildCalUrl(id))}>Subscribe</Button>
+                                <Stack spacing={2} direction="row">
+                                    <Link variant="contained" href={this.buildCalUrl(id)}>Google</Link>
+                                    <Link variant="contained" href={this.buildWebCalUrl(id)}>Apple</Link>
+                                </Stack>
                             </TableCell>
                         </TableRow>
                     ))}
